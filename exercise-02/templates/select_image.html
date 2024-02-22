@@ -1,0 +1,21 @@
+<!-- select_image.html -->
+{% extends "layout.html" %}
+
+{% block title %}
+    Select Image
+{% endblock %}
+
+{% block content %}
+    <h1>Select Image</h1>
+    <form action="{{ url_for('view_image') }}" method="get">
+        <div class="form-group">
+            <label for="imageSelect">Choose an image:</label>
+            <select class="form-control" id="imageSelect" name="image">
+                {% for key, value in descriptions.items() %}
+                    <option value="{{ key }}">{{ value }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">View Image</button>
+    </form>
+{% endblock %}

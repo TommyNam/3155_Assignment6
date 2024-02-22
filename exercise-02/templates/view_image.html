@@ -1,0 +1,17 @@
+<!-- view_image.html -->
+{% extends "layout.html" %}
+
+{% block title %}
+    View Image
+{% endblock %}
+
+{% block content %}
+    <h1>View Image</h1>
+    {% if image %}
+        <img src="{{ url_for('static', filename='images/image' + image + '.jpg') }}" alt="Image">
+        <p>{{ description }}</p>
+    {% else %}
+        <p>No image selected.</p>
+    {% endif %}
+    <a href="{{ url_for('select_image') }}" class="btn btn-primary">Back to Select Image</a>
+{% endblock %}
