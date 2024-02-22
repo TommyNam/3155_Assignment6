@@ -1,0 +1,11 @@
+# Ignore virtual environments
+venv/
+
+# Ignore garbage files
+__pycache__/
+.vscode/
+*.pyc
+
+
+# source: https://stackoverflow.com/questions/42306410/gitignore-syntax-how-to-exclude-virtualenv-sub-directories
+# https://levelup.gitconnected.com/remove-pycache-vscode-6c9204399913
