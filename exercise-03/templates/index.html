@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Event Registration
+{% endblock %}
+
+{% block content %}
+    <h1>Event Registration</h1>
+    <form action="{{ url_for('register') }}" method="POST">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="event">Select Event:</label>
+            <select class="form-control" id="event" name="event" required>
+                <option value="">Select an event</option>
+                <option value="Carnival">Carnival</option>
+                <option value="Nascar Event">Nascar Event</option>
+                <option value="Career Fair">Career Fair</option>
+                <option value="Comedy Show">Comedy Show</option>
+                <option value="Amusement Park Event">Amusement Park Event</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+{% endblock %}

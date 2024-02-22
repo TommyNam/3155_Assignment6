@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Registered Users
+{% endblock %}
+
+{% block content %}
+    <h1>Registered Users</h1>
+    <div class="list-group">
+        {% for name, event in registered_users.items() %}
+            <div class="list-group-item">
+                <div>{{ name }} - {{ event }}</div>
+                <form class="float-right" action="{{ url_for('delete_user', name=name) }}" method="POST">
+                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
